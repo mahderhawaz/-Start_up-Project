@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Ekub - Ethiopian Digital Savings Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+          line-height: 1.6;
+          color: #333;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* CSS Variables */
+        :root {
+          --primary-green: #3a6d43;
+          --primary-green-dark: #2c5334;
+          --primary-green-light: #4c8055;
+          --primary-green-very-light: #e8f5ea;
+          --text-gray: #6b7280;
+          --text-dark: #1f2937;
+        }
+
+        /* Header */
+       /* Header - Fixed Layout */
+/* Header - Fixed Layout */
+/* Header - Fixed Layout */
+/* Header - Single Row with Rounded Background */
+.header {
+  background: transparent; /* Remove header background */
+  backdrop-filter: none;
+  box-shadow: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content:flex-start ;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Rounded Container for Header Content */
+.header-content {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 50px; /* Rounded container */
+  padding: 0.8rem 5rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: 1400px; /* Much larger max-width */
+  min-width: 1200px;
+}
+
+/* Logo Section - Left Side */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.arabic-text {
+  font-size: 0.9rem;
+  color: #d4a574;
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Navigation - Center */
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-green);
+}
+
+/* CTA Button - Right Side */
+.cta-button {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cta-button:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(58, 109, 67, 0.3);
+}
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-self: end;
+}
+
+.mobile-menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--primary-green);
+  margin: 2px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.hero-image-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .container {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+  gap: 4rem; /* Increased gap between nav items */
+  align-items: center;
+  flex-grow: 1; /* Take up available space */
+  justify-content: center;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .cta-button {
+    display: none;
+  }
+}
+
+
+
+ 
+
+.cta-button:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(58, 109, 67, 0.3);
+
+}
+
+
+         
+         .hero-image-bg {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .hero-image-bg img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: white;
+          z-index: 2;
+        }
+
+        .hero-quote {
+          font-size: 2.5rem;
+          font-weight: 300;
+          font-style: italic;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Services Section */
+        .services-section {
+          padding: 80px 0;
+          background: #f9fafb;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .section-icon {
+          width: 64px;
+          height: 64px;
+          background: var(--primary-green-very-light);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+        }
+
+        .section-icon i {
+          font-size: 2rem;
+          color: var(--primary-green);
+        }
+
+        .section-subtitle {
+          color: var(--text-gray);
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: var(--primary-green);
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 7rem;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+
+        .service-card {
+          background: var(--primary-green);
+          color: white;
+          padding: 2rem 1.5rem;
+          border-radius: 1rem;
+          text-align: center;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(58, 109, 67, 0.2);
+          min-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(58, 109, 67, 0.3);
+        }
+
+        .service-icon {
+          margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+          font-size: 2.5rem;
+          color: white;
+        }
+
+        .service-card h3 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          line-height: 1.4;
+        }
+
+        /* Secondary Hero */
+        .secondary-hero {
+          height: 60vh;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Join Options Section */
+        .join-options-section {
+          padding: 80px 0;
+          background: white;
+        }
+
+        .pricing-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 5rem;
+          max-width: 1150px;
+          margin: 0 auto;
+        }
+
+        .pricing-card {
+          background: var(--primary-green);
+          color: white;
+          padding: 1.5rem 1rem;
+          border-radius: 1rem;
+          text-align: center;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(58, 109, 67, 0.2);
+          min-height: 180px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .pricing-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(58, 109, 67, 0.3);
+        }
+
+        .pricing-icon {
+          margin-bottom: 1rem;
+        }
+
+        .pricing-icon i {
+          font-size: 1.8rem;
+          color: white;
+        }
+
+        .pricing-card h3 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .pricing-subtitle {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.8rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .price {
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+
+        /* Join Form Section */
+        .join-form-section {
+          padding: 80px 0;
+          background: #f9fafb;
+        }
+
+        .form-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .form-emoji {
+          font-size: 2rem;
+          margin-right: 0.5rem;
+        }
+
+        .form-header h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--text-dark);
+        }
+
+        .join-form {
+          max-width: 600px;
+          margin: 0 auto;
+          display: grid;
+          gap: 2rem;
+        }
+
+        .form-group {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .form-group label {
+          min-width: 150px;
+          font-weight: 500;
+          color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select {
+          flex: 1;
+          padding: 0.75rem;
+          border: 2px solid #e5e7eb;
+          border-radius: 25px;
+          font-size: 1rem;
+          transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+          outline: none;
+          border-color: var(--primary-green);
+        }
+
+        .submit-btn {
+          background: var(--primary-green);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 25px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s;
+          justify-self: center;
+          margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+          background: var(--primary-green-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(58, 109, 67, 0.3);
+        }
+
+        /* About Section */
+        .about-section {
+          position: relative;
+          height: 80vh;
+          overflow: hidden;
+        }
+
+        .about-image-bg {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .about-image-bg img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .about-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.4);
+          backdrop-filter: blur(8px);
+          padding: 2rem;
+          border-radius: 20px 20px 0 0;
+        }
+
+        .about-content {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: left;
+        }
+
+        .about-content h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--primary-green);
+          margin-bottom: 1rem;
+        }
+
+        .about-content p {
+          color: var(--text-gray);
+          line-height: 1.7;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        /* Why Choose Us Section */
+.why-choose-us-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.why-choose-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.why-choose-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--text-dark);
+}
+
+.benefits-list i {
+  background: var(--primary-green);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 0.875rem;
+}
+
+.why-choose-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+}
+
+/* Clean image styling - no decorative elements */
+.woman-phone {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.woman-pointing {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove all decorative elements */
+.decorative-elements {
+  display: none; /* Hide green decorative card */
+}
+
+.green-card {
+  display: none; /* Hide green card */
+}
+
+.arabic-text {
+  display: none; /* Hide Arabic text */
+}
+
+.wave-pattern {
+  display: none; /* Hide wave pattern */
+}
+
+.arrow-left {
+  display: none; /* Hide arrow */
+}                                 
+        /* Testimonials Section */
+        .testimonials-section {
+          padding: 80px 0;
+          background: #f9fafb;
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .testimonials-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 4rem;
+          position: relative;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .testimonial-card {
+          background: var(--primary-green);
+          color: white;
+          padding: 2rem;
+          border-radius: 1rem;
+          text-align: center;
+          transition: transform 0.3s;
+          box-shadow: 0 10px 30px rgba(58, 109, 67, 0.2);
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-5px);
+        }
+
+        .rating-stars {
+          color: #fbbf24;
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+
+        .testimonial-content img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1rem;
+          border: 3px solid white;
+        }
+
+        .testimonial-content p {
+          font-size: 1rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-style: italic;
+        }
+
+        .arrow-right {
+          position: absolute;
+          right: -50px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: var(--text-gray);
+          font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-section {
+          padding: 80px 0;
+          background: white;
+        }
+
+        .team-list {
+          max-width: 600px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .team-member {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 1rem;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+          transform: translateY(-5px);
+        }
+
+        .team-member img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid var(--primary-green-very-light);
+        }
+
+        .team-info h4 {
+          font-weight: 600;
+          color: var(--text-dark);
+          margin-bottom: 0.25rem;
+        }
+
+        .team-info p {
+          color: var(--text-gray);
+        }
+
+        /* Footer */
+        /* Footer */
+.footer {
+  position: relative;
+}
+
+.footer-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.footer-bg img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.footer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4rem 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.footer-section li:not(:has(a)) {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    gap: 1.5rem;
+  }
+}          
+               /* Responsive Design */
+        @media (max-width: 768px) {
+          .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
+          }
+
+          .nav-menu.active {
+            display: flex;
+          }
+
+          .mobile-menu-toggle {
+            display: flex;
+          }
+
+          .why-choose-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .image-container {
+            height: 300px;
+            margin: 0 auto;
+          }
+
+          .woman-phone,
+          .woman-pointing {
+            width: 150px;
+            height: 200px;
+          }
+
+          .services-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .pricing-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+
+          .testimonials-container {
+            grid-template-columns: 1fr;
+          }
+
+          .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .form-group {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .form-group label {
+            min-width: auto;
+          }
+
+          .hero-quote {
+            font-size: 1.8rem;
+          }
+
+          .section-header h2 {
+            font-size: 2rem;
+          }
+
+          .arrow-right {
+            display: none;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .container {
+            padding: 0 15px;
+          }
+
+          .section-header h2 {
+            font-size: 1.8rem;
+          }
+
+          .why-choose-text h2 {
+            font-size: 2rem;
+          }
+
+          .hero-quote {
+            font-size: 1.5rem;
+          }
+
+          .pricing-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        /* Smooth scrolling */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Animation classes */
+        .fade-in {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Ripple effect */
+        .cta-button, .submit-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+ <!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo - Left Side -->
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="./assets/logo.jpg" alt="logo" class="logo-image">
+                    <div class="logo-text">
+                        <span>DIGITAL</span>
+                        <span class="arabic-text">ዲጂታል</span>
+                    </div>
+                </div>
+                <div class="brand-name">Digital Ekub</div>
+            </div>
+            
+            <!-- Navigation - Center -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <!-- CTA Button - Right Side -->
+            <button class="cta-button">
+                <i class="fas fa-phone"></i>
+                Let's Talk
+            </button>
+        </div>
+    </div>
+</header>
+     
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-image-bg">
+            <img src="./assets/step1.png" alt="step1">
+        </div>
+    </section>
+
+    <!-- 2. Services -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p class="section-subtitle">For a modern life</p>
+                <h2>Our Ekub Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Daily saving plans</h3>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>A transparent, fair lottery picks winners.</h3>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Time and space - less service</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Secondary Hero -->
+    <section class="secondary-hero">
+        <div class="hero-image-bg">
+            <img src="./assets/step2.png" alt="step2">
+            <div class="hero-overlay">
+                <p class="hero-quote">"One day, this will be ours"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Join Options -->
+    <section class="join-options-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h2>Join Options</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Daily</h3>
+                    <p class="pricing-subtitle">starting from</p>
+                    <p class="price">100 Birr</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>Weekly</h3>
+                    <p class="pricing-subtitle">starting from</p>
+                    <p class="price">500 birr</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Monthly</h3>
+                    <p class="pricing-subtitle">starting from</p>
+                    <p class="price">1,500 birr</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Yearly</h3>
+                    <p class="pricing-subtitle">starting from</p>
+                    <p class="price">15,000 birr</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Join Here (Form) -->
+    <section class="join-form-section">
+        <div class="container">
+            <div class="form-header">
+                <span class="form-emoji">🤝</span>
+                <h2>Join the Ekub Circle Today</h2>
+            </div>
+            
+            <form class="join-form" id="joinForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="choosePlan">Choose Plan ▼</label>
+                    <select id="choosePlan" name="choosePlan" required>
+                        <option value="">Select a plan</option>
+                        <option value="daily">Daily - 100 Birr</option>
+                        <option value="weekly">Weekly - 500 Birr</option>
+                        <option value="monthly">Monthly - 1,500 Birr</option>
+                        <option value="yearly">Yearly - 15,000 Birr</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Join Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. About Us -->
+    <section class="about-section" id="about">
+        <div class="about-image-bg">
+            <img src="./assets/step3.png" alt="step4">
+            <div class="about-overlay">
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>At Digital Ekub, we're dedicated to modernizing the traditional Ekub system. our platform makes it simple and secure to save money with your community—anytime, anywhere. We combine the trusted culture of Ekub with digital convenience, helping you manage savings plans easily without the need for physical meetings.</p>
+                    <p>Join us and experience a smarter way to save together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Why Choose Us -->
+    <section class="why-choose-us-section">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h2>Why Choose Us</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Trusted and Transparent</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Flexible Saving Plans</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Anytime, Anywhere</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Secure and Easy to Use</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Community</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-choose-image">
+                    <div class="image-container">
+                        <img src="./assets/step5.jpg" alt="step5" class="woman-phone">
+                        <img src="./assets/step4.jpg" alt="step4" class="woman-pointing">
+                        
+                            <div class="green-card">
+                                <span class="arabic-text">١٠٪</span>
+                                <div class="wave-pattern"></div>
+                            </div>
+                        </div>
+                        <div class="arrow-left">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonials</h2>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="rating-stars">★★★☆☆</div>
+                    <div class="testimonial-content">
+                        <img src="./assets/t1.JPG" alt="t1">
+                        <p>"It makes my life easy!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating-stars">★★★☆☆</div>
+                    <div class="testimonial-content">
+                        <img src="./assets/t4.JPG" alt="t4">
+                        <p>"God bless you!!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating-stars">★★★☆☆</div>
+                    <div class="testimonial-content">
+                        <img src="./assets/t3.JPG" alt="t3">
+                        <p>"Makes my life organized!"</p>
+                    </div>
+                </div>
+                
+                <div class="arrow-right">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Meet My Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet My Team</h2>
+            </div>
+            
+            <div class="team-list">
+                <div class="team-member">
+                    <img src="./assets/meet 1.jpg" alt="meet 1">
+                    <div class="team-info">
+                        <h4>Mahder Hawaz</h4>
+                        <p>Co-Founder & Product Manager</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="./assets/User 2.jpg" alt="user 2">
+                    <div class="team-info">
+                        <h4>John Atakiti</h4>
+                        <p>Reception</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="./assets/meet 2.jpg" alt="meet 2">
+                    <div class="team-info">
+                        <h4>Ephrata Yohans</h4>
+                        <p>Ekub Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+     <!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer-bg">
+        <img src="./assets/footer.png" alt="footer">
+        <div class="footer-overlay">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                            <li><a href="#services"><i class="fas fa-cogs"></i> Our Services</a></li>
+                            <li><a href="#join"><i class="fas fa-user-plus"></i> Join Now</a></li>
+                            <li><a href="#contact"><i class="fas fa-phone"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Social Media</h3>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#"><i class="fab fa-telegram"></i> Telegram</a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Address: Addis Ababa, Ethiopia</li>
+                            <li><i class="fas fa-phone"></i> Phone: +251-926044690</li>
+                            <li><i class="fas fa-envelope"></i> Email: info@digitalekub.com</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom Bar -->
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        © 2025 by Digital Ekub. Powered by Modern Technology
+                    </div>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener("DOMContentLoaded", () => {
+          const mobileToggle = document.getElementById("mobileToggle");
+          const navMenu = document.getElementById("navMenu");
+
+          if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener("click", () => {
+              navMenu.classList.toggle("active");
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll("a");
+            navLinks.forEach((link) => {
+              link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+              });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener("click", (event) => {
+              if (!mobileToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove("active");
+              }
+            });
+          }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Join form handling
+        const joinForm = document.getElementById("joinForm");
+        if (joinForm) {
+          joinForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const fullName = document.getElementById("fullName").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const choosePlan = document.getElementById("choosePlan").value;
+
+            // Simple validation
+            if (!fullName || !phoneNumber || !choosePlan) {
+              alert("Please fill in all fields");
+              return;
+            }
+
+            // Simulate form submission
+            alert(`Thank you ${fullName}! We will contact you at ${phoneNumber} regarding your ${choosePlan} plan.`);
+            this.reset();
+          });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        // Add fade-in animation to sections
+        document.addEventListener("DOMContentLoaded", () => {
+          const sections = document.querySelectorAll("section");
+          sections.forEach((section) => {
+            section.classList.add("fade-in");
+            observer.observe(section);
+          });
+        });
+
+        // Header scroll effect
+        window.addEventListener("scroll", () => {
+          const header = document.querySelector(".header");
+          if (header) {
+            if (window.scrollY > 100) {
+              header.style.background = "rgba(255, 255, 255, 0.98)";
+              header.style.backdropFilter = "blur(15px)";
+            } else {
+              header.style.background = "rgba(255, 255, 255, 0.95)";
+              header.style.backdropFilter = "blur(10px)";
+            }
+          }
+        });
+
+        // Button click effects
+        document.addEventListener("DOMContentLoaded", () => {
+          const buttons = document.querySelectorAll(".cta-button, .submit-btn");
+
+          buttons.forEach((button) => {
+            button.addEventListener("click", function (e) {
+              // Create ripple effect
+              const ripple = document.createElement("span");
+              const rect = this.getBoundingClientRect();
+              const size = Math.max(rect.width, rect.height);
+              const x = e.clientX - rect.left - size / 2;
+              const y = e.clientY - rect.top - size / 2;
+
+              ripple.style.width = ripple.style.height = size + "px";
+              ripple.style.left = x + "px";
+              ripple.style.top = y + "px";
+              ripple.classList.add("ripple");
+
+              this.appendChild(ripple);
+
+              setTimeout(() => {
+                ripple.remove();
+              }, 600);
+            });
+          });
+        });
+    </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Ekub - Chatbot</title>
+    <style>
+        /* Chatbot Container */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Chat Toggle Button */
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(22, 163, 74, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(22, 163, 74, 0.4);
+        }
+
+        .chat-toggle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(22, 163, 74, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Chat Window */
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .chat-window.active {
+            display: flex;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chat-header-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chat-header-text h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .status {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* Chat Messages */
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 85%;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .message-content {
+            background: #f3f4f6;
+            padding: 0.75rem 1rem;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .user-message .message-content {
+            background: #16a34a;
+            color: white;
+        }
+
+        .bot-message .message-content {
+            border-bottom-left-radius: 6px;
+        }
+
+        .user-message .message-content {
+            border-bottom-right-radius: 6px;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .quick-action-btn {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+        }
+
+        .quick-action-btn:hover {
+            background: #16a34a;
+            color: white;
+            border-color: #16a34a;
+        }
+
+        /* Chat Input */
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        #messageInput {
+            flex: 1;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        #messageInput:focus {
+            border-color: #16a34a;
+        }
+
+        .send-button {
+            width: 40px;
+            height: 40px;
+            background: #16a34a;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .send-button:hover {
+            background: #15803d;
+        }
+
+        .send-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        /* Scrollbar Styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 2px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 480px) {
+            .chatbot-container {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+            }
+            
+            .chat-window {
+                width: 100%;
+                height: 70vh;
+                bottom: 80px;
+                right: 0;
+                left: 0;
+            }
+            
+            .chat-toggle {
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: #f3f4f6;
+            border-radius: 18px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #9ca3af;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <!-- Chat Toggle Button -->
+        <div class="chat-toggle" id="chatToggle">
+            <div class="chat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="white"/>
+                    <circle cx="7" cy="9" r="1" fill="white"/>
+                    <circle cx="12" cy="9" r="1" fill="white"/>
+                    <circle cx="17" cy="9" r="1" fill="white"/>
+                </svg>
+            </div>
+            <div class="close-icon" style="display: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-09%20223854.jpg-P8Amt2rXtiI1f6bpkPV18VfpY4sfpe.jpeg" alt="Digital Ekub" class="avatar-img">
+                    </div>
+                    <div class="chat-header-text">
+                        <h3>Digital Ekub Assistant</h3>
+                        <p class="status">Online • Ready to help</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-09%20223854.jpg-P8Amt2rXtiI1f6bpkPV18VfpY4sfpe.jpeg" alt="Bot" class="avatar-img">
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! 👋 Welcome to Digital Ekub. I'm here to help you with questions about our services, saving plans, and how to join our community. How can I assist you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions" id="quickActions">
+                <button class="quick-action-btn" onclick="sendQuickMessage('What are your saving plans?')">
+                    💰 Saving Plans
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickMessage('How do I join?')">
+                    📝 How to Join
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickMessage('Tell me about your services')">
+                    🏦 Our Services
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickMessage('Contact information')">
+                    📞 Contact Us
+                </button>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input">
+                <div class="input-container">
+                    <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500">
+                    <button class="send-button" id="sendButton" onclick="sendMessage()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot Knowledge Base
+        const chatbotKnowledge = {
+            greetings: [
+                "Hello! Welcome to Digital Ekub! How can I help you today?",
+                "Hi there! I'm here to assist you with Digital Ekub services. What would you like to know?",
+                "Welcome! I'm your Digital Ekub assistant. How may I help you?"
+            ],
+            
+            savingPlans: {
+                daily: "Our Daily saving plan starts from 100 Birr. It's perfect for those who want to save small amounts regularly.",
+                weekly: "Weekly saving plan starts from 500 Birr. Great for consistent weekly contributions to your savings goal.",
+                monthly: "Monthly saving plan starts from 1,500 Birr. Ideal for those who prefer monthly contributions.",
+                yearly: "Yearly saving plan starts from 15,000 Birr. Perfect for long-term savers with annual contributions.",
+                general: "We offer 4 flexible saving plans:\n• Daily - starting from 100 Birr\n• Weekly - starting from 500 Birr\n• Monthly - starting from 1,500 Birr\n• Yearly - starting from 15,000 Birr\n\nAll plans are designed to fit your lifestyle and financial goals!"
+            },
+            
+            services: {
+                general: "Our Digital Ekub services include:\n• Daily saving plans with flexible contributions\n• Transparent and fair lottery system\n• Time and space-efficient digital platform\n• Secure money management\n• Community-based savings groups",
+                lottery: "We use a transparent and fair lottery system to determine winners. All members have equal chances based on their contributions.",
+                security: "Your money is secure with us. We use modern digital security measures while maintaining the trusted culture of traditional Ekub."
+            },
+            
+            howToJoin: "To join Digital Ekub:\n1. Fill out the registration form with your Full Name and Phone Number\n2. Choose your preferred saving plan (Daily, Weekly, Monthly, or Yearly)\n3. Click 'Join Now' to complete your registration\n4. Our team will contact you to finalize the setup\n\nIt's that simple!",
+            
+            aboutUs: "At Digital Ekub, we're dedicated to modernizing the traditional Ekub system. Our platform makes it simple and secure to save money with your community—anytime, anywhere. We combine the trusted culture of Ekub with digital convenience, helping you manage savings plans easily without the need for physical meetings.",
+            
+            whyChooseUs: "Why choose Digital Ekub?\n✅ Trusted and Transparent\n✅ Flexible Saving Plans\n✅ Anytime, Anywhere access\n✅ Secure and Easy to Use\n✅ Strong Community support\n\nWe make traditional Ekub modern and convenient!",
+            
+            team: "Meet our team:\n• Mahder Hawaz - Co-Founder & Product Manager\n• Selam Atakilt - Reception\n• Ephrata Yohans - Ekub Advisor\n\nOur experienced team is here to help you succeed with your savings goals!",
+            
+            contact: "Contact Digital Ekub:\n📍 Address: Addis Ababa, Ethiopia\n📞 Phone: +251-926044690\n📧 Email: info@digitalekub.com\n\nYou can also reach us through our social media:\n👍 Facebook\n📸 Instagram\n💬 Telegram\n💼 LinkedIn"
+        };
+
+        // DOM Elements
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const quickActions = document.getElementById('quickActions');
+
+        // Chat state
+        let isOpen = false;
+
+        // Initialize chatbot
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle chat window
+            chatToggle.addEventListener('click', toggleChat);
+            
+            // Send message on Enter key
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Enable/disable send button based on input
+            messageInput.addEventListener('input', function() {
+                sendButton.disabled = this.value.trim() === '';
+            });
+        });
+
+        // Toggle chat window
+        function toggleChat() {
+            isOpen = !isOpen;
+            
+            if (isOpen) {
+                chatWindow.classList.add('active');
+                chatToggle.querySelector('.chat-icon').style.display = 'none';
+                chatToggle.querySelector('.close-icon').style.display = 'block';
+                messageInput.focus();
+            } else {
+                chatWindow.classList.remove('active');
+                chatToggle.querySelector('.chat-icon').style.display = 'block';
+                chatToggle.querySelector('.close-icon').style.display = 'none';
+            }
+        }
+
+        // Send message function
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            
+            // Clear input
+            messageInput.value = '';
+            sendButton.disabled = true;
+            
+            // Hide quick actions after first message
+            if (quickActions.style.display !== 'none') {
+                quickActions.style.display = 'none';
+            }
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Generate bot response
+            setTimeout(() => {
+                hideTypingIndicator();
+                const response = generateResponse(message);
+                addMessage(response, 'bot');
+            }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+        }
+
+        // Send quick message
+        function sendQuickMessage(message) {
+            messageInput.value = message;
+            sendMessage();
+        }
+
+        // Add message to chat
+        function addMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            
+            const avatarImg = document.createElement('img');
+            avatarImg.className = 'avatar-img';
+            avatarImg.alt = sender === 'bot' ? 'Bot' : 'You';
+            
+            if (sender === 'bot') {
+                avatarImg.src = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-09%20223854.jpg-P8Amt2rXtiI1f6bpkPV18VfpY4sfpe.jpeg';
+            } else {
+                avatarImg.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMxNmEzNGEiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTIwIDIxVjE5QTQgNCAwIDAgMCAxNiAxNUg4QTQgNCAwIDAgMCA0IDE5VjIxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K';
+            }
+            
+            avatar.appendChild(avatarImg);
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            content.innerHTML = message.replace(/\n/g, '<br>');
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot-message';
+            typingDiv.id = 'typing-indicator';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            const avatarImg = document.createElement('img');
+            avatarImg.src = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-09%20223854.jpg-P8Amt2rXtiI1f6bpkPV18VfpY4sfpe.jpeg';
+            avatarImg.className = 'avatar-img';
+            avatarImg.alt = 'Bot';
+            avatar.appendChild(avatarImg);
+            
+            const content = document.createElement('div');
+            content.className = 'typing-indicator';
+            content.innerHTML = `
+                <span>Typing</span>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(content);
+            
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Generate bot response
+        function generateResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Greetings
+            if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                return getRandomResponse(chatbotKnowledge.greetings);
+            }
+            
+            // Saving plans
+            if (message.includes('saving plan') || message.includes('plans') || message.includes('save') || message.includes('money')) {
+                if (message.includes('daily')) return chatbotKnowledge.savingPlans.daily;
+                if (message.includes('weekly')) return chatbotKnowledge.savingPlans.weekly;
+                if (message.includes('monthly')) return chatbotKnowledge.savingPlans.monthly;
+                if (message.includes('yearly') || message.includes('annual')) return chatbotKnowledge.savingPlans.yearly;
+                return chatbotKnowledge.savingPlans.general;
+            }
+            
+            // Services
+            if (message.includes('service') || message.includes('what do you do') || message.includes('what is ekub')) {
+                if (message.includes('lottery')) return chatbotKnowledge.services.lottery;
+                if (message.includes('security') || message.includes('secure')) return chatbotKnowledge.services.security;
+                return chatbotKnowledge.services.general;
+            }
+            
+            // How to join
+            if (message.includes('join') || message.includes('register') || message.includes('sign up') || message.includes('how to')) {
+                return chatbotKnowledge.howToJoin;
+            }
+            
+            // About us
+            if (message.includes('about') || message.includes('who are you') || message.includes('company')) {
+                return chatbotKnowledge.aboutUs;
+            }
+            
+            // Why choose us
+            if (message.includes('why') || message.includes('benefit') || message.includes('advantage')) {
+                return chatbotKnowledge.whyChooseUs;
+            }
+            
+            // Team
+            if (message.includes('team') || message.includes('staff') || message.includes('who works')) {
+                return chatbotKnowledge.team;
+            }
+            
+            // Contact
+            if (message.includes('contact') || message.includes('phone') || message.includes('email') || message.includes('address')) {
+                return chatbotKnowledge.contact;
+            }
+            
+            // Pricing
+            if (message.includes('price') || message.includes('cost') || message.includes('fee') || message.includes('birr')) {
+                return chatbotKnowledge.savingPlans.general;
+            }
+            
+            // Default response
+            return "I'd be happy to help you with information about Digital Ekub! You can ask me about:\n\n• Our saving plans and pricing\n• How to join our community\n• Our services and features\n• Contact information\n• About our team\n\nWhat would you like to know more about?";
+        }
+
+        // Get random response from array
+        function getRandomResponse(responses) {
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
